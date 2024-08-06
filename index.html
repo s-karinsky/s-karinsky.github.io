@@ -1,0 +1,457 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Wow! Timeline!</title>
+  <script src="static/utils/colors.js"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Roboto+Serif:ital,opsz,wght@0,8..144,100..900;1,8..144,100..900&family=Yanone+Kaffeesatz:wght@200..700&display=swap"
+    rel="stylesheet">
+  <script>
+    var size = (new Date()).getFullYear() - 1992
+    const timeline = [
+        {
+          "m": 1,
+          "height": "54",
+          "bg": "#E2CFEA",
+          "border": "1px solid #ccc"
+        },
+        {
+          "m": 3,
+          "height": "62"
+        },
+        {
+          "m": 6,
+          "height": "72"
+        },
+        {
+          "m": 9,
+          "height": "79"
+        },
+        {
+          "m": 12,
+          "height": "84"
+        },
+        {
+          "m": 18,
+          "height": "91"
+        },
+        {
+          "m": 24,
+          "height": "99"
+        },
+        {
+          "m": 36,
+          "height": "104"
+        },
+        {
+          "m": 48,
+          "height": "109"
+        },
+        {
+          "m": 60,
+          "height": "116",
+          "bg": "#A06CD5"
+        },
+        {
+          "m": 72,
+          "height": "124"
+        },
+        {
+          "m": 84,
+          "height": "130"
+        },
+        {
+          "m": 96,
+          "height": "135"
+        },
+        {
+          "m": 108,
+          "height": "141"
+        },
+        {
+          "m": 120,
+          "height": "147"
+        },
+        {
+          "m": 132,
+          "height": "153"
+        },
+        {
+          "m": 144,
+          "height": "158"
+        },
+        {
+          "m": 156,
+          "height": "166"
+        },
+        {
+          "m": 168,
+          "height": "176"
+        },
+        {
+          "m": 180,
+          "height": "181",
+        },
+        {
+          "m": 183,
+          "bg": "#A06CD5"
+        },
+        {
+          "m": 192,
+          "height": "185"
+        },
+        {
+          "m": 193,
+          "bg": "#AD2E24"
+        },
+        {
+          "m": 194,
+          "bg": "#76340B"
+        },
+        {
+          "m": 195,
+          "border": "3px dotted #76340B"
+        },
+        {
+          "m": 196,
+          "border": "5px solid #220D0E"
+        },
+        {
+          "m": 200,
+          "border": "3px solid #5B616A"
+        },
+        {
+          "m": 203,
+        },
+        {
+          "m": 204,
+          "bg": "#95B8D1"
+        },
+        {
+          "m": 206,
+          "bg": "#F865B0"
+        },
+        {
+          "m": 207,
+          "borderTop": "3px solid #220D0E"
+        },
+        {
+          "m": 209,
+          "bg": "#FF3F00"
+        },
+        {
+          "m": 212,
+        },
+        {
+          "m": 216,
+          "bg": "#FFA85C"
+        },
+        {
+          "m": 222,
+          "bg": "#61988E"
+        },
+        {
+          "m": 228,
+          "bg": "#CBBFBB"
+        },
+        {
+          "m": 233,
+          "bg": "#102B3F"
+        },
+        {
+          "m": 240,
+        },
+        {
+          "m": 242,
+        },
+        {
+          "m": 243,
+          "borderTop": "5px solid #111111"
+        },
+        {
+          "m": 276,
+          "bg": "#062726",
+          "borderTop": "5px solid #111111"
+        },
+        {
+          "m": 277,
+          "borderTop": "1px solid #E83F6F"
+        },
+        {
+          "m": 286,
+          "borderTop": "5px solid #E83F6F"
+        },
+        {
+          "m": 290,
+          "bg": "#95B8D1",
+          "borderTop": "5px solid #E83F6F"
+        },
+        {
+          "m": 294,
+          "bg": "#775144",
+          "borderTop": "4px solid #E83F6F"
+        },
+        {
+          "m": 300,
+          "bg": "#2A0800",
+          "borderTop": "3px solid #E83F6F"
+        },
+        {
+          "m": 306,
+          "bg": "#E8DDB5",
+          "borderTop": "5px solid #E83F6F"
+        },
+        {
+          "m": 312,
+          "borderTop": "4px solid #E83F6F"
+        },
+        {
+          "m": 318,
+          "bg": "#292F36",
+          "borderTop": "2px solid #E83F6F"
+        },
+        {
+          "m": 320,
+          "bg": "#04030F",
+          "borderTop": "1px solid #E83F6F"
+        },
+        {
+          "m": 322,
+          "bg": "#6a6a6a",
+          "border": "1px solid #333333"
+        },
+        {
+          "m": 329,
+          "bg": "#212121",
+          "border": "1px solid #000000"
+        },
+        {
+          "m": 330,
+          "border": "3px dashed #333333"
+        },
+        {
+          "m": 342,
+          "bg": "#96E8FF",
+          "border": "3px dashed #333333"
+        },
+        {
+          "m": 354,
+          "bg": "#2DD2FF",
+          "border": "3px dashed #333333"
+        },
+        {
+          "m": 366,
+          "bg": "#0099C3",
+          "border": "3px dashed #333333"
+        },
+        {
+          "m": 368,
+          "bg": "#7A8F00",
+          "border": "1px solid #999999"
+        },
+        {
+          "m": 372,
+          "bg": "#008F64",
+          "border": "1px solid #999999"
+        },
+        {
+          "m": 380,
+          "bg": "#008F33"
+        },
+        {
+          "m": 382,
+          "bg": "#A3BAC3",
+          "border": "1px solid #006989"
+        },
+        {
+          "m": 384,
+          "bg": "#A9E190"
+        },
+        {
+          "m": 385,
+          "bg": "#212121",
+          "border": "1px solid #CAE9FF"
+        },
+        {
+          "m": 388,
+          "bg": "#434343",
+          "border": "1px dashed #545454"
+        }
+      ];
+    const last = timeline[timeline.length - 1]?.m
+    const hs = []
+    const bgs = []
+    const fullLine = timeline.reduce((acc, item, i, arr) => {
+      const { m, height, bg, border, borderTop } = item
+
+      if (height) {
+        const nextItem = arr.slice(i + 1).find(item => item.height)
+        const count = (nextItem?.m || last) - m
+        const diff = nextItem ? (nextItem.height - height) : 0
+        const step = diff / count
+        acc[m].height = Number(height) 
+        hs.push(Number(height)) 
+        Array.from({ length: count - 1 }).forEach((_, i) => {
+          acc[m + i].height = Number(height) + step * (i + 1)
+          hs.push(Number(height) + step * (i + 1))
+        })
+      }
+      if (bg) {     
+        const nextItem = arr.slice(i + 1).find(item => item.bg)
+        const count = (nextItem?.m || last) - m
+        const rgb1 = hexToRgb(bg)
+        acc[m].bg = rgb1
+        bgs.push(rgb1)
+        let step
+        if (nextItem) {
+          const rgb2 = hexToRgb(nextItem.bg)
+          
+          step = rgb2.map((cl, i) => (cl - rgb1[i]) / count)
+          console.log(rgb1, rgb2, step);
+        }
+        Array.from({ length: count - 1 }).forEach((_, i) => {
+          acc[m + 1].bg = step && count > 2 ? rgb1.map((cl, i) => cl + step[i] * i) : rgb1
+          bgs.push(step && count > 2 ? rgb1.map((cl, j) => cl + step[j] * i) : rgb1)
+        })
+      }
+      return acc
+    }, Array.from({ length: 400 }).fill({}))
+
+    const marks = [
+      {
+        from: '05-2005',
+        to: '07-2005',
+        color: '#F84AA7',
+        content: '👦'
+      }, {
+        from: '07-2005',
+        to: '12-2005',
+        color: '#3F334D'
+      }, {
+        from: '07-2006',
+        to: '10-2006',
+        color: '#AD2831'
+      },/*  {
+        from: '01-2007',
+        content: '💪'
+      }, {
+        from: '03-2007',
+        content: '🙄'
+      },  */{
+        from: '06-2007',
+        to: '06-2008',
+        color: 'linear-gradient(90deg, #AD2831, #38040E, #800E13, #250902, #640D14, #212121)',
+        content: '🐕‍🦺'
+      }, {
+        from: '07-2008',
+        to: '08-2012',
+        color: 'linear-gradient(90deg, #B91372 0%, #FA198B 20%, #FA198B 31%, #31081F 58%, #6B0F1A 70%, #0E0004 100%)',
+        content: '🦌'
+      }
+    ]
+    
+    window.onload = () => {
+      let date = new Date('1992-01-04')
+      hs.forEach((height, i) => {
+        const div = document.createElement('div')
+        div.style.height = height + 'px'
+        div.style.borderTopColor = bgs[i] ? `rgb(${bgs[i].join(',')})` : '#fff'
+        div.classList.add('moment')
+        const month = String(date.getMonth() + 1).padStart(2, '0')
+        div.id = `moment-${month}-${date.getFullYear()}`
+        document.getElementById('timeline').appendChild(div)
+        date.setMonth(date.getMonth() + 1)
+      })
+      Array.from({ length: 500 - hs.length }).forEach(() => {
+        const div = document.createElement('div')
+        div.style.height = '185px'
+        div.style.background = '#fff'
+        div.classList.add('moment')
+        div.classList.add('moment_future')
+        document.getElementById('timeline').appendChild(div)
+      })
+
+      marks.forEach(mark => {
+        const start = `#moment-${mark.from}`
+        const end = mark.to ? `#moment-${mark.to}` : null
+        const startEl = document.querySelector(start)
+        const endEl = end ? document.querySelector(end) : startEl
+        const div = document.createElement('div')
+        div.style.position = 'absolute'
+        div.style.bottom = '20px'
+        div.style.left = startEl.getBoundingClientRect().left + 1 + 'px'
+        div.style.width = (endEl.getBoundingClientRect().right - startEl.getBoundingClientRect().left - 1) + 'px'
+        div.style.height = '5px'
+        div.style.background = mark.color
+        if (mark.content) {
+          div.innerHTML = '<div style="position: absolute; left: 0; top: -24px;">' + mark.content + '</div>'
+        }
+        document.getElementById('timeline').appendChild(div)
+      })
+    }
+    
+  </script>
+  <style>
+    html, head, body {
+      font-family: "Roboto Serif", serif;
+      margin: 20px 10px;
+      padding: 0;
+      height: 100%;
+    }
+    #timeline {
+      width: 100vw;
+      max-width: 100vw;
+      display: flex;
+      flex-wrap: nowrap;
+      align-items: flex-end;
+      counter-reset: year 1991;
+      position: relative;
+      /* transform: scale(40);
+      transform-origin: 50% 50%; */
+    }
+    #timeline > .moment {
+      flex: 1 1 0;
+      position: relative;
+      border-top-style: solid;
+      border-bottom-style: solid;
+      border-top-width: 5px;
+      border-bottom-width: 5px;
+    }
+    .moment_future {
+      opacity: 0.3;
+      border: none !important;
+    }
+    .moment:first-child:before,
+    .moment:nth-child(12n + 8):before {
+      counter-increment: year;
+      content: counter(year); 
+      position: absolute;
+      left: 0;
+      top: 100%;
+      transform: rotate(-90deg) translate(-100%, -50%);
+      transform-origin: 5px 50%;
+    }
+    .moment[id^="moment-01"] { border-bottom-color: #BC2995; }
+    .moment[id^="moment-02"] { border-bottom-color: #8D2095; }
+    .moment[id^="moment-03"] { border-bottom-color: #5D1793; }
+    .moment[id^="moment-04"] { border-bottom-color: #1553cc; }
+    .moment[id^="moment-05"] { border-bottom-color: #4BB0BF; }
+    .moment[id^="moment-06"] { border-bottom-color: #40942B; }
+    .moment[id^="moment-07"] { border-bottom-color: #7AC735; }
+    .moment[id^="moment-08"] { border-bottom-color: #FFFE54; }
+    .moment[id^="moment-09"] { border-bottom-color: #F9CD46; }
+    .moment[id^="moment-10"] { border-bottom-color: #F39D38; }
+    .moment[id^="moment-11"] { border-bottom-color: #EF6F2E; }
+    .moment[id^="moment-12"] { border-bottom-color: #DB3F3A; }
+  </style>
+</head>
+<body>
+  <h1>Ничего интересного.<br>Мне просто нравится визуализировать время.</h1>
+  <h3>Это расслабляет. А на больших масштабах тренирует воображение<br>Можно, правда, и кукухой поехать, сиьно увлекаться тоже не стоит</h3>
+  <div id="timeline"></div>
+</body>
+</html>
