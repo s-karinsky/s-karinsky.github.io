@@ -293,10 +293,10 @@
         const count = (nextItem?.m || last) - m
         const diff = nextItem ? (nextItem.height - height) : 0
         const step = diff / count
-        acc[m].height = Number(height) 
-        hs.push(Number(height)) 
+        if (acc[m]) acc[m].height = Number(height) 
+        hs.push(Number(height))
         Array.from({ length: count - 1 }).forEach((_, i) => {
-          acc[m + i].height = Number(height) + step * (i + 1)
+          if (acc[m + i]) acc[m + i].height = Number(height) + step * (i + 1)
           hs.push(Number(height) + step * (i + 1))
         })
       }
@@ -304,7 +304,7 @@
         const nextItem = arr.slice(i + 1).find(item => item.bg)
         const count = (nextItem?.m || last) - m
         const rgb1 = hexToRgb(bg)
-        acc[m].bg = rgb1
+        if (acc[m]) acc[m].bg = rgb1
         bgs.push(rgb1)
         let step
         if (nextItem) {
@@ -314,12 +314,12 @@
           console.log(rgb1, rgb2, step);
         }
         Array.from({ length: count - 1 }).forEach((_, i) => {
-          acc[m + 1].bg = step && count > 2 ? rgb1.map((cl, i) => cl + step[i] * i) : rgb1
+          if (acc[m + 1]) acc[m + 1].bg = step && count > 2 ? rgb1.map((cl, i) => cl + step[i] * i) : rgb1
           bgs.push(step && count > 2 ? rgb1.map((cl, j) => cl + step[j] * i) : rgb1)
         })
       }
       return acc
-    }, Array.from({ length: 400 }).fill({}))
+    }, Array.from({ length: 290 }).fill({}))
 
     const marks = [
       {
@@ -366,13 +366,6 @@
         begin: '02-2007',
         from: '06-2007',
         to: '08-2010',
-        color: '#3F334D',
-        label: 'PHP',
-        icon: '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><!--!Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.--><path d="M320 104.5c171.4 0 303.2 72.2 303.2 151.5S491.3 407.5 320 407.5c-171.4 0-303.2-72.2-303.2-151.5S148.7 104.5 320 104.5m0-16.8C143.3 87.7 0 163 0 256s143.3 168.3 320 168.3S640 349 640 256 496.7 87.7 320 87.7zM218.2 242.5c-7.9 40.5-35.8 36.3-70.1 36.3l13.7-70.6c38 0 63.8-4.1 56.4 34.3zM97.4 350.3h36.7l8.7-44.8c41.1 0 66.6 3 90.2-19.1 26.1-24 32.9-66.7 14.3-88.1-9.7-11.2-25.3-16.7-46.5-16.7h-70.7L97.4 350.3zm185.7-213.6h36.5l-8.7 44.8c31.5 0 60.7-2.3 74.8 10.7 14.8 13.6 7.7 31-8.3 113.1h-37c15.4-79.4 18.3-86 12.7-92-5.4-5.8-17.7-4.6-47.4-4.6l-18.8 96.6h-36.5l32.7-168.6zM505 242.5c-8 41.1-36.7 36.3-70.1 36.3l13.7-70.6c38.2 0 63.8-4.1 56.4 34.3zM384.2 350.3H421l8.7-44.8c43.2 0 67.1 2.5 90.2-19.1 26.1-24 32.9-66.7 14.3-88.1-9.7-11.2-25.3-16.7-46.5-16.7H417l-32.8 168.7z"/></svg>'
-      }, {
-        begin: '02-2007',
-        from: '02-2024',
-        to: 'now',
         color: '#3F334D',
         label: 'PHP',
         icon: '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><!--!Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.--><path d="M320 104.5c171.4 0 303.2 72.2 303.2 151.5S491.3 407.5 320 407.5c-171.4 0-303.2-72.2-303.2-151.5S148.7 104.5 320 104.5m0-16.8C143.3 87.7 0 163 0 256s143.3 168.3 320 168.3S640 349 640 256 496.7 87.7 320 87.7zM218.2 242.5c-7.9 40.5-35.8 36.3-70.1 36.3l13.7-70.6c38 0 63.8-4.1 56.4 34.3zM97.4 350.3h36.7l8.7-44.8c41.1 0 66.6 3 90.2-19.1 26.1-24 32.9-66.7 14.3-88.1-9.7-11.2-25.3-16.7-46.5-16.7h-70.7L97.4 350.3zm185.7-213.6h36.5l-8.7 44.8c31.5 0 60.7-2.3 74.8 10.7 14.8 13.6 7.7 31-8.3 113.1h-37c15.4-79.4 18.3-86 12.7-92-5.4-5.8-17.7-4.6-47.4-4.6l-18.8 96.6h-36.5l32.7-168.6zM505 242.5c-8 41.1-36.7 36.3-70.1 36.3l13.7-70.6c38.2 0 63.8-4.1 56.4 34.3zM384.2 350.3H421l8.7-44.8c43.2 0 67.1 2.5 90.2-19.1 26.1-24 32.9-66.7 14.3-88.1-9.7-11.2-25.3-16.7-46.5-16.7H417l-32.8 168.7z"/></svg>'
@@ -465,7 +458,6 @@
         div.style.bottom = '20px'
         div.style.left = startEl.getBoundingClientRect().left + 1 + 'px'
         div.style.width = (endEl.getBoundingClientRect().right - startEl.getBoundingClientRect().left - 1) + 'px'
-        div.style.height = '5px'
         div.style.background = mark.color
         Object.keys(styles || {}).forEach(key => {
           div.style[key] = styles[key]
@@ -475,18 +467,13 @@
         }
         if (mark.icon) {
           div.innerHTML = mark.icon
-          // document.getElementById('timeline').innerHTML += '<span id="icon-' + mark.label + '">' + mark.icon + '</span>'
-          // const icon = document.getElementById('icon-' + mark.label)
-          // icon.style.left = startEl.getBoundingClientRect().left + 1 - 18 + 'px'
-          // icon.style.bottom = `${40 + 10 * i}px`
-          // icon.style.position = 'absolute'
-
+          div.style.fill = mark.color
         }
         div.classList.add('linetime')
         document.getElementById('timeline').appendChild(div)
       }
 
-      xp.forEach((e, i) => renderMark(e, { bottom: `${40 + 10 * i}px` }, i))
+      xp.forEach((e, i) => renderMark(e, { bottom: `${20 + 20 * i}px` }, i))
     }
     
   </script>
@@ -543,18 +530,25 @@
     .moment[id^="moment-10"] { border-bottom-color: #F39D38; }
     .moment[id^="moment-11"] { border-bottom-color: #EF6F2E; }
     .moment[id^="moment-12"] { border-bottom-color: #DB3F3A; }
+    .linetime {
+      border-radius: 5px;
+      height: 5px;
+      transform: translateY(50%);
+    }
     .linetime svg {
-      position: absolute;
-      left: -18px;
-      top: -6px;
-      width: 16px;
-      height: 16px;
+      transform: translate(-125%, -40%);
+      width: 18px;
+      height: 18px;
+      fill: #000;
+      display: flex;
+      align-items: center;
     }
   </style>
 </head>
 <body>
   <h1>Ничего интересного.<br>Мне просто нравится визуализировать время.</h1>
-  <h3>Это расслабляет. А на больших масштабах тренирует воображение<br>Можно, правда, и кукухой поехать, сиьно увлекаться тоже не стоит</h3>
+  <h3>Это расслабляет.<br>А на больших масштабах тренирует воображение.</h3>
+  <p>Можно, правда, и кукухой поехать.</p>
   <div id="timeline"></div>
 </body>
 </html>
